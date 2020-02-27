@@ -38,7 +38,6 @@ int string_pos = 0;
 
 void func(node *root)
 {
-
 	root->val = cur_val++;
 	root->XCOORD = 0;
 	root->YCOORD = 0;
@@ -52,9 +51,8 @@ void func(node *root)
 		func(root->LLINK);
 	}
 	else
-	{
 		root->LLINK = NULL;
-	}
+		
 	c = s1[string_pos++];
 	if (c == 'y')
 	{
@@ -62,9 +60,7 @@ void func(node *root)
 		func(root->RLINK);
 	}
 	else
-	{
 		root->RLINK = NULL;
-	}
 }
 
 node *getSampleTree()
@@ -89,14 +85,12 @@ void drawTree(node *root)
 	}
 }
 
-void draw()
-{
+void draw(){
 	drawTree(treeRoot);
 	glFlush();
 }
 
-int main(int argc, char **argv)
-{
+int initTree(int argc, char **argv){
 	extreme *a = (extreme *)malloc(sizeof(extreme));
 	extreme *b = (extreme *)malloc(sizeof(extreme));
 
@@ -112,10 +106,8 @@ int main(int argc, char **argv)
 	glutMainLoop();
 }
 
-void convert(node *T, int XPOS)
-{
-	if (T != NULL)
-	{
+void convert(node *T, int XPOS){
+	if (T != NULL){
 		T->XCOORD = XPOS;
 		// if (T->THREAD==true){
 		// 	T->THREAD = false;
@@ -127,8 +119,7 @@ void convert(node *T, int XPOS)
 	}
 }
 
-void setup(node *T, int LEVEL, extreme *RMOST, extreme *LMOST)
-{
+void setup(node *T, int LEVEL, extreme *RMOST, extreme *LMOST){
 	int CURSEP;			  // SEPARATION ON CURRENT LEVEL
 	int ROOTSEP;		  //CURRENT SEPARATION AT NODE T
 	int LOFFSUM, ROFFSUM; // OFPSET FROM L & R TO T

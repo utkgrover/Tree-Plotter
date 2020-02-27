@@ -1,3 +1,5 @@
+#ifndef TREE_H
+#define TREE_H
 
 // node of tree
 typedef struct node {
@@ -14,3 +16,12 @@ typedef struct extreme{
 	int OFF;
 	int LEV;
 } extreme;
+
+class Tree{
+    public:
+    static void initTree(int *, char **);
+    static void drawLine(int,int,int,int);
+    static void drawLine(int , int , int , int , int);
+};
+
+#endif
