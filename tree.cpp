@@ -104,7 +104,7 @@ int main(int argc, char **argv){
     convert(treeRoot, WINDOW_WIDTH/2);
 	printf("\nInorder traversal of Tree :\n");
     inorder(treeRoot);
-	Helper::createWindow(WINDOW_WIDTH,WINDOW_HEIGHT, "Graphics Assignment");
+	Helper::createWindow(&argc, argv);
 	Helper::clearScreen();
     glutDisplayFunc(draw);
     // glutIdleFunc(idle);

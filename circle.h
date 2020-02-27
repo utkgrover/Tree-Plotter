@@ -3,6 +3,7 @@
 
 class Circle{
     public:
+    static void initCircle(int* , char**);
     static void drawCircle(int,int,int);
 };
 

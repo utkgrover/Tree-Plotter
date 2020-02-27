@@ -19,11 +19,10 @@ void Helper::clearScreen(){
     glPointSize(1);
 }
 
-void Helper::createWindow(int win_wid,int win_ht,char* title){
-    int count = 1;
-    glutInit(&count,NULL);
+void Helper::createWindow(int *argc, char **argv){
+    glutInit(argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB ); //we dont want indexed colours 
-    glutInitWindowSize(win_wid,win_ht);
-    glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH )- win_wid)/ 2, (glutGet(GLUT_SCREEN_HEIGHT) - win_ht) / 2 );
-    glutCreateWindow(title);
+    glutInitWindowSize(WINDOW_WIDTH,WINDOW_HEIGHT);
+    glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH )- WINDOW_WIDTH)/ 2, (glutGet(GLUT_SCREEN_HEIGHT) - WINDOW_HEIGHT) / 2 );
+    glutCreateWindow("Display Window");
 }

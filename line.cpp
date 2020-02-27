@@ -1,4 +1,3 @@
-#include<stdio.h>
 #include<iostream>
 #include<GL/glut.h>
 #include<math.h>
@@ -94,8 +93,6 @@ void Line::drawLine(int x1, int y1, int x2, int y2){
     glEnd();
 }
 
-
-
 void Line::drawLine(int x1, int y1, int x2, int y2, int padding){
     correctAlignment(&x1,&y1,&x2,&y2);
     double len = sqrt((y2-y1)*(y2-y1) + (x2-x1)*(x2-x1));
@@ -104,31 +101,37 @@ void Line::drawLine(int x1, int y1, int x2, int y2, int padding){
     Line::drawLine(x1+x_correction, y1+y_correction, x2 - x_correction, y2-y_correction);
 }
 
-void render(void);
-
-/*int main()
-{
-    std::cin>>X1>>Y1>>X2>>Y2;
-    char *title = "line";
-    Helper::createWindow(1000,1000,title);
-    glClearColor(0,0,0,0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glutDisplayFunc(render);
-    glutMainLoop();
-    return 0;
-}*/
-
-void render(void)
-{
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluOrtho2D(0.0,WINDOW_WIDTH,0.0,WINDOW_HEIGHT);
-    glColor3f(1.0,0.0,0.0);
-    glPointSize(1);
+void render(void){
+    Helper::clearScreen();
     Line::drawLine(X1, Y1, X2, Y2);
     glFlush();
 }
 
-//refs
-// 1 https://www.lighthouse3d.com/tutorials/glut-tutorial/initialization/
-//2 https://www.youtube.com/watch?v=vdVEFW5jn7U&t=196s
+bool insideScreen(int x,int y){
+    bool status=true;
+    if(x<0 || x> Helper::WINDOW_WIDTH)
+        status=false;
+    if(y<0 || y> Helper::WINDOW_HEIGHT)
+        status=false;
+
+    if(!status){
+        std::cout<<"The points are not within the display area . Please enter again"<<std::endl;
+    }
+    return status;
+}
+
+void Line::initLine(int *argc, char **argv){  
+    do{
+        std::cout<<"enter x and y coordinates of the first point"<<std::endl;
+        std::cin>>X1>>Y1;
+    } while(!insideScreen(X1,Y1));
+
+    do{
+        std::cout<<"enter x and y coordinates of the second point"<<std::endl;
+        std::cin>>X2>>Y2;
+    } while(!insideScreen(X2,Y2));
+    
+    Helper::createWindow(argc, argv);
+    glutDisplayFunc(render);
+    glutMainLoop();
+}

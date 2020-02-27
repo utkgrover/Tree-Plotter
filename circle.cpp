@@ -3,7 +3,7 @@
 #include<GL/glut.h>
 #include"circle.h"
 
-int CENTER_X=250,CENTER_Y=250, RADIUS=7;
+int center_x=250,center_y=250, cradius=7;
 
 void getAllPoints(int x,int y, int centerX, int centerY){
     Helper::plotPoint(x+centerX, y+centerY);
@@ -44,15 +44,21 @@ void Circle::drawCircle(int centerX, int centerY, int radius){
 
 void display(void){
     Helper::clearScreen();
-    Circle::drawCircle(CENTER_X, CENTER_Y, RADIUS);
+    Circle::drawCircle(center_x, center_y, cradius);
     glFlush();
 }
 void idle(){}
 
-/*int main(){
-    char* title= "circle";
-    Helper::createWindow(1000,1000,title);
+void Circle::initCircle(int *argc,char** argv){
+
+    std::cout<<"Enter the coordinates of the center :"<<std::endl;
+    std::cin>>center_x>>center_y;
+    std::cout<<"Enter the radius of the circle :"<<std::endl;
+    std::cin>>cradius;
+
+    Helper::createWindow(argc,argv);
+    
     glutDisplayFunc(display);
     glutIdleFunc(idle);
     glutMainLoop();
-}*/
+}
