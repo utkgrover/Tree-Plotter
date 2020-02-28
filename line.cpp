@@ -8,11 +8,16 @@ const int WINDOW_WIDTH=500;
 const int WINDOW_HEIGHT=500;
 static int X1, Y1, X2, Y2;
 
-void plotPoint(int x,int y){
-    glVertex2i(x,y);
-}
-
-void correctAlignment(int *x1, int *y1, int *x2, int *y2){
+/**
+ * @brief This function ensures that the 1st point is always below the 2nd point 
+ * because the Bresenham algorithm starts drawing from the lower point
+ * 
+ * @param x1 The X coordinate of 1st point
+ * @param y1 The Y coordinate of 1st point
+ * @param x2 The X coordinate of 2nd point
+ * @param y2 The Y coordinate of 2nd point
+ */
+void Line::correctAlignment(int *x1, int *y1, int *x2, int *y2){
     if(*y1>*y2){
         int temp = *x1;
         *x1=*x2;
@@ -24,7 +29,20 @@ void correctAlignment(int *x1, int *y1, int *x2, int *y2){
     }
 }
 
-int getSlopeType(int x1, int y1, int x2, int y2){
+/**
+ * @brief Get the slope category of the line based on it's slope
+ * 
+ * @param x1 The X coordinate of 1st point
+ * @param y1 The Y coordinate of 1st point
+ * @param x2 The X coordinate of 2nd point
+ * @param y2 The Y coordinate of 2nd point
+ * @return int 
+ * 0 - slope lies between 0 and 1
+ * 1 - slope lies between 1 and infinity
+ * 2 - slope lies between minus infinity and -1
+ * 3 - slope lies between -1 and 0
+ */
+int Line::getSlopeType(int x1, int y1, int x2, int y2){
     if(x2==x1) return 1;
 
     double slope = ((double)(y2-y1))/(x2-x1);
@@ -34,6 +52,15 @@ int getSlopeType(int x1, int y1, int x2, int y2){
     else return 2;
 }
 
+/**
+ * @brief Draws a line between the given points by plotting each pixel on the line 
+ * based on Bresenham's Line Drawing Algorithm
+ * 
+ * @param x1 The X coordinate of 1st point
+ * @param y1 The Y coordinate of 1st point
+ * @param x2 The X coordinate of 2nd point
+ * @param y2 The Y coordinate of 2nd point
+ */
 void Line::drawLine(int x1, int y1, int x2, int y2){
     correctAlignment(&x1,&y1,&x2,&y2);
     int slopeType = getSlopeType(x1,y1,x2,y2);
@@ -63,7 +90,7 @@ void Line::drawLine(int x1, int y1, int x2, int y2){
     int x=0,y=0;
 
     glBegin(GL_POINTS);
-    plotPoint(x+x1,y+y1);
+    Helper::plotPoint(x+x1,y+y1);
 
     while(x+x1<x2){
         if(d<=0){
@@ -77,22 +104,33 @@ void Line::drawLine(int x1, int y1, int x2, int y2){
         x++;
         switch(slopeType){
             case 0:
-                plotPoint(x1+x,y1+y);
+                Helper::plotPoint(x1+x,y1+y);
                 break;
             case 1:
-                plotPoint(x1+y,y1+x);
+                Helper::plotPoint(x1+y,y1+x);
                 break;
             case 2:
-                plotPoint(x1-y,y1+x);
+                Helper::plotPoint(x1-y,y1+x);
                 break;
             case 3:
-                plotPoint(x1-x,y1+y);
+                Helper::plotPoint(x1-x,y1+y);
                 break;
         }
     }
     glEnd();
 }
 
+/**
+ * @brief Draws a line between the given points with padding by plotting each pixel on the line 
+ * based on Bresenham's Line Drawing Algorithm
+ * 
+ * @param x1 The X coordinate of 1st point
+ * @param y1 The Y coordinate of 1st point
+ * @param x2 The X coordinate of 2nd point
+ * @param y2 The Y coordinate of 2nd point
+ * @param padding The padding to be given from both the points i.e. it first clips the line from both ends
+ * based on specified value
+ */
 void Line::drawLine(int x1, int y1, int x2, int y2, int padding){
     correctAlignment(&x1,&y1,&x2,&y2);
     double len = sqrt((y2-y1)*(y2-y1) + (x2-x1)*(x2-x1));
@@ -107,7 +145,16 @@ void render(void){
     glFlush();
 }
 
-bool insideScreen(int x,int y){
+/**
+ * @brief This function provides a validation check before 
+ * plotting a point by determining if it is within screen bounds
+ * 
+ * @param x The x coordinate of the point to be checked
+ * @param y The y coordinate of the point to be checked
+ * @return true if the given point is inside the screen
+ * @return false if the given point is outside the screen
+ */
+bool Line::insideScreen(int x,int y){
     bool status=true;
     if(x<0 || x> Helper::WINDOW_WIDTH)
         status=false;
@@ -120,6 +167,13 @@ bool insideScreen(int x,int y){
     return status;
 }
 
+/**
+ * @brief 
+ * This function is used to take coordinates as input from the user, 
+ * and display a line between those coordinates on a window using OpenGL
+ * @param argc Pointer to total number of arguments
+ * @param argv The actual arguments to be passed to the function
+ */
 void Line::initLine(int *argc, char **argv){  
     do{
         std::cout<<"enter x and y coordinates of the first point"<<std::endl;

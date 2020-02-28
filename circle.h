@@ -2,9 +2,12 @@
 #define CIRCLE_H
 
 class Circle{
+    private:
+    void getAllPoints(int, int, int, int);
+
     public:
     static void initCircle(int* , char**);
-    static void drawCircle(int,int,int);
+    void drawCircle(int, int, int);
 };
 
 #endif

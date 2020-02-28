@@ -5,7 +5,7 @@
 
 int center_x=250,center_y=250, cradius=7;
 
-void getAllPoints(int x,int y, int centerX, int centerY){
+void Circle::getAllPoints(int x,int y, int centerX, int centerY){
     Helper::plotPoint(x+centerX, y+centerY);
     Helper::plotPoint(-x+centerX, y+centerY);
     Helper::plotPoint(x+centerX, -y+centerY);
@@ -47,8 +47,13 @@ void display(void){
     Circle::drawCircle(center_x, center_y, cradius);
     glFlush();
 }
-void idle(){}
 
+/**
+ * @brief 
+ * This function is used to take input from the user, generate a tree and display it on a window using OpenGL
+ * @param argc Pointer to total number of arguments
+ * @param argv The actual arguments to be passed to the function
+ */
 void Circle::initCircle(int *argc,char** argv){
 
     std::cout<<"Enter the coordinates of the center :"<<std::endl;
@@ -59,6 +64,6 @@ void Circle::initCircle(int *argc,char** argv){
     Helper::createWindow(argc,argv);
     
     glutDisplayFunc(display);
-    glutIdleFunc(idle);
+    // glutIdleFunc(idle);
     glutMainLoop();
 }
