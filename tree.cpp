@@ -120,7 +120,7 @@ void Tree::initTree(int *argc, char **argv){
 
 	treeRoot = getSampleTree();
 	Tree::setup(treeRoot, 0, a, b);
-	Tree::convert(treeRoot, WINDOW_WIDTH / 2);
+	Tree::convert(treeRoot, Helper::WINDOW_WIDTH / 2);
 	printf("\nInorder traversal of Tree :\n");
 	Tree::inorder(treeRoot);
 	Helper::createWindow(argc, argv);
@@ -177,7 +177,7 @@ void Tree::setup(node *T, int LEVEL, extreme *RMOST, extreme *LMOST){
 		RMOST->LEV = -1;
 	}
 	else{
-		T->YCOORD = WINDOW_HEIGHT - TOP_MARGIN - LEVEL * DISTANCE_LEVEL;
+		T->YCOORD = Helper::WINDOW_HEIGHT - TOP_MARGIN - LEVEL * DISTANCE_LEVEL;
 		L = T->LLINK;				 //FOLLOWS CONTOUR OF LEFT SUBTREE
 		R = T->RLINK;				 // FOLLOWS CONTOUR OP RIGNT SUBTREE
 		setup(L, LEVEL + 1, LR, LL); //POSITION SUBTREES RECURSIVELY

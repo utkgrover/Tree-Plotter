@@ -2,9 +2,6 @@
 #define HELPER_H
 
 class Helper{
-    private:
-    
-
     public:
     const static int WINDOW_WIDTH=1000;
     const static int WINDOW_HEIGHT=1000;
