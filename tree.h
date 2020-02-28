@@ -19,9 +19,11 @@ typedef struct extreme{
 
 class Tree{
     public:
-    static void initTree(int *, char **);
-    static void drawLine(int,int,int,int);
-    static void drawLine(int , int , int , int , int);
+    static void initTree(int*, char**);
+	static void inorder(node*);
+	static void setup(node*, int, extreme*, extreme*);
+	static void convert(node*, int);
+	void drawTree(node*, Circle, Line);
 };
 
 #endif

@@ -8,8 +8,6 @@
 #include <GL/glut.h>
 using namespace std;
 
-const int WINDOW_WIDTH = 1000;
-const int WINDOW_HEIGHT = 1000;
 /**
  * @brief The distance to be maintained between each level of the binary Tree
  * 
@@ -33,15 +31,12 @@ const int RADIUS = 20;
 
 static node *treeRoot;
 
-void setup(node *T, int LEVEL, extreme *RMOST, extreme *LMOST);
-void convert(node *T, int XPOS);
-
 /**
- * @brief 
+ * @brief Prints the coordinates of nodes by performing an in-order traversal
  * 
- * @param root 
+ * @param root Pointer to the root of the tree
  */
-void inorder(node *root){
+void Tree::inorder(node *root){
 	if (root == NULL) return;
 
 	inorder(root->LLINK);
@@ -78,7 +73,7 @@ void func(node *root){
 	else root->RLINK = NULL;
 }
 
-node *getSampleTree(){
+node* getSampleTree(){
 	node *root = (node *)malloc(sizeof(node));
 	func(root);
 	return root;
@@ -93,7 +88,7 @@ node *getSampleTree(){
  * @param circle Circle object to be used for drawing circles
  * @param line Line object to be used for drawing lines
  */
-void drawTree(node *root, Circle circle, Line line){
+void Tree::drawTree(node *root, Circle circle, Line line){
 	circle.drawCircle(root->XCOORD, root->YCOORD, RADIUS);
 	if (root->LLINK != NULL){
 		line.drawLine(root->XCOORD, root->YCOORD, root->LLINK->XCOORD, root->LLINK->YCOORD, RADIUS + 2);
@@ -108,7 +103,8 @@ void drawTree(node *root, Circle circle, Line line){
 void draw(){
 	Circle circle;
 	Line line;
-	drawTree(treeRoot, circle, line);
+	Tree tree;
+	tree.drawTree(treeRoot, circle, line);
 	glFlush();
 }
 
@@ -123,10 +119,10 @@ void Tree::initTree(int *argc, char **argv){
 	extreme *b = (extreme *)malloc(sizeof(extreme));
 
 	treeRoot = getSampleTree();
-	setup(treeRoot, 0, a, b);
-	convert(treeRoot, WINDOW_WIDTH / 2);
+	Tree::setup(treeRoot, 0, a, b);
+	Tree::convert(treeRoot, WINDOW_WIDTH / 2);
 	printf("\nInorder traversal of Tree :\n");
-	inorder(treeRoot);
+	Tree::inorder(treeRoot);
 	Helper::createWindow(argc, argv);
 	Helper::clearScreen();
 	glutDisplayFunc(draw);
@@ -140,7 +136,7 @@ void Tree::initTree(int *argc, char **argv){
  * @param T Pointer to the root of the subtree whose absolute coordinate is to be determined
  * @param XPOS The X-Coordinate that has to be assigned to this node passed as 1st parameter
  */
-void convert(node *T, int XPOS){
+void Tree::convert(node *T, int XPOS){
 	if (T != NULL){
 		T->XCOORD = XPOS;
 		// if (T->THREAD==true){
@@ -163,7 +159,7 @@ void convert(node *T, int XPOS){
  * @param RMOST Pointer to right most nodes used to determine offset efficiently
  * @param LMOST Pointer to right most nodes used to determine offset efficiently
  */
-void setup(node *T, int LEVEL, extreme *RMOST, extreme *LMOST){
+void Tree::setup(node *T, int LEVEL, extreme *RMOST, extreme *LMOST){
 	int CURSEP;			  // SEPARATION ON CURRENT LEVEL
 	int ROOTSEP;		  //CURRENT SEPARATION AT NODE T
 	int LOFFSUM, ROFFSUM; // OFPSET FROM L & R TO T
