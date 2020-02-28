@@ -1,0 +1,194 @@
+\hypertarget{tree_8cpp}{}\section{tree.\+cpp File Reference}
+\label{tree_8cpp}\index{tree.\+cpp@{tree.\+cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}helper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}circle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}line.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tree.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L/glut.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tree_8cpp_ae30519ecd732ebb4e3b9d63b4886029e}{func}} (\mbox{\hyperlink{structnode}{node}} $\ast$root)
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{tree_8cpp_aa049b4cbad5a73c214b25bb7b9e7a24e}{get\+Sample\+Tree}} ()
+\item 
+void \mbox{\hyperlink{tree_8cpp_a56c5cf8a568cff737ff95520cbe6b405}{draw}} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{tree_8cpp_a76ad836e5b990f33aadbb566f8515505}{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL}} = 100
+\begin{DoxyCompactList}\small\item\em The distance to be maintained between each level of the binary \mbox{\hyperlink{class_tree}{Tree}}. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{tree_8cpp_ac805b9c62e0f035f62f95b784b8afd25}{T\+O\+P\+\_\+\+M\+A\+R\+G\+IN}} = 50
+\begin{DoxyCompactList}\small\item\em Top margin to be left on the screen before drawing the root of the \mbox{\hyperlink{class_tree}{Tree}}. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{tree_8cpp_a4f40de64fc693da0c7fb74d8eccf9e38}{M\+I\+N\+S\+EP}} = 100
+\begin{DoxyCompactList}\small\item\em The minimum separation between two nodes at the same level. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{tree_8cpp_aeb44a1c2c685ed2800552e1434b43bb2}{R\+A\+D\+I\+US}} = 20
+\begin{DoxyCompactList}\small\item\em Radius to be used while drawing the circles representing a node in the binary tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tree_8cpp_a9962f2a13481dff2d13b74dc7ce369fe}{cur\+\_\+val}} = 0
+\item 
+string \mbox{\hyperlink{tree_8cpp_af8c0a132b43085e7f3ff34066f752228}{s3}} = \char`\"{}ynnyyynynnnyynnyyynynnnyynynnyynnn\char`\"{}
+\item 
+string \mbox{\hyperlink{tree_8cpp_ace84011912e839b1d087bfbae0454676}{s2}} = \char`\"{}ynynynnyyynnnynynn\char`\"{}
+\item 
+string \mbox{\hyperlink{tree_8cpp_ab32b03d5b846de07655aac2aa21e197a}{s1}} = \char`\"{}yyyyynnyynnyynnyynnynnynnynnynnyynnyynnyynnyyyyynnynnynnynnynn\char`\"{}
+\item 
+string \mbox{\hyperlink{tree_8cpp_a3d3d012ee23e9506d713f74cd522028d}{s4}} = \char`\"{}ynynynynynnynn\char`\"{}
+\item 
+int \mbox{\hyperlink{tree_8cpp_ab3b35d86ce54ed54c5ff68f871efc5d8}{string\+\_\+pos}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tree_8cpp_a56c5cf8a568cff737ff95520cbe6b405}\label{tree_8cpp_a56c5cf8a568cff737ff95520cbe6b405}} 
+\index{tree.\+cpp@{tree.\+cpp}!draw@{draw}}
+\index{draw@{draw}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_ae30519ecd732ebb4e3b9d63b4886029e}\label{tree_8cpp_ae30519ecd732ebb4e3b9d63b4886029e}} 
+\index{tree.\+cpp@{tree.\+cpp}!func@{func}}
+\index{func@{func}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{func()}{func()}}
+{\footnotesize\ttfamily void func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_aa049b4cbad5a73c214b25bb7b9e7a24e}\label{tree_8cpp_aa049b4cbad5a73c214b25bb7b9e7a24e}} 
+\index{tree.\+cpp@{tree.\+cpp}!get\+Sample\+Tree@{get\+Sample\+Tree}}
+\index{get\+Sample\+Tree@{get\+Sample\+Tree}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Sample\+Tree()}{getSampleTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ get\+Sample\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file tree.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{tree_8cpp_a9962f2a13481dff2d13b74dc7ce369fe}\label{tree_8cpp_a9962f2a13481dff2d13b74dc7ce369fe}} 
+\index{tree.\+cpp@{tree.\+cpp}!cur\+\_\+val@{cur\+\_\+val}}
+\index{cur\+\_\+val@{cur\+\_\+val}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{cur\+\_\+val}{cur\_val}}
+{\footnotesize\ttfamily int cur\+\_\+val = 0}
+
+
+
+Definition at line 47 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_a76ad836e5b990f33aadbb566f8515505}\label{tree_8cpp_a76ad836e5b990f33aadbb566f8515505}} 
+\index{tree.\+cpp@{tree.\+cpp}!D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL@{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL}}
+\index{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL@{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL}{DISTANCE\_LEVEL}}
+{\footnotesize\ttfamily const int D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+L\+E\+V\+EL = 100}
+
+
+
+The distance to be maintained between each level of the binary \mbox{\hyperlink{class_tree}{Tree}}. 
+
+
+
+Definition at line 15 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_a4f40de64fc693da0c7fb74d8eccf9e38}\label{tree_8cpp_a4f40de64fc693da0c7fb74d8eccf9e38}} 
+\index{tree.\+cpp@{tree.\+cpp}!M\+I\+N\+S\+EP@{M\+I\+N\+S\+EP}}
+\index{M\+I\+N\+S\+EP@{M\+I\+N\+S\+EP}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{M\+I\+N\+S\+EP}{MINSEP}}
+{\footnotesize\ttfamily const int M\+I\+N\+S\+EP = 100}
+
+
+
+The minimum separation between two nodes at the same level. 
+
+
+
+Definition at line 25 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_aeb44a1c2c685ed2800552e1434b43bb2}\label{tree_8cpp_aeb44a1c2c685ed2800552e1434b43bb2}} 
+\index{tree.\+cpp@{tree.\+cpp}!R\+A\+D\+I\+US@{R\+A\+D\+I\+US}}
+\index{R\+A\+D\+I\+US@{R\+A\+D\+I\+US}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{R\+A\+D\+I\+US}{RADIUS}}
+{\footnotesize\ttfamily const int R\+A\+D\+I\+US = 20}
+
+
+
+Radius to be used while drawing the circles representing a node in the binary tree. 
+
+
+
+Definition at line 30 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_ab32b03d5b846de07655aac2aa21e197a}\label{tree_8cpp_ab32b03d5b846de07655aac2aa21e197a}} 
+\index{tree.\+cpp@{tree.\+cpp}!s1@{s1}}
+\index{s1@{s1}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{s1}{s1}}
+{\footnotesize\ttfamily string s1 = \char`\"{}yyyyynnyynnyynnyynnynnynnynnynnyynnyynnyynnyyyyynnynnynnynnynn\char`\"{}}
+
+
+
+Definition at line 50 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_ace84011912e839b1d087bfbae0454676}\label{tree_8cpp_ace84011912e839b1d087bfbae0454676}} 
+\index{tree.\+cpp@{tree.\+cpp}!s2@{s2}}
+\index{s2@{s2}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{s2}{s2}}
+{\footnotesize\ttfamily string s2 = \char`\"{}ynynynnyyynnnynynn\char`\"{}}
+
+
+
+Definition at line 49 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_af8c0a132b43085e7f3ff34066f752228}\label{tree_8cpp_af8c0a132b43085e7f3ff34066f752228}} 
+\index{tree.\+cpp@{tree.\+cpp}!s3@{s3}}
+\index{s3@{s3}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{s3}{s3}}
+{\footnotesize\ttfamily string s3 = \char`\"{}ynnyyynynnnyynnyyynynnnyynynnyynnn\char`\"{}}
+
+
+
+Definition at line 48 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_a3d3d012ee23e9506d713f74cd522028d}\label{tree_8cpp_a3d3d012ee23e9506d713f74cd522028d}} 
+\index{tree.\+cpp@{tree.\+cpp}!s4@{s4}}
+\index{s4@{s4}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{s4}{s4}}
+{\footnotesize\ttfamily string s4 = \char`\"{}ynynynynynnynn\char`\"{}}
+
+
+
+Definition at line 51 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_ab3b35d86ce54ed54c5ff68f871efc5d8}\label{tree_8cpp_ab3b35d86ce54ed54c5ff68f871efc5d8}} 
+\index{tree.\+cpp@{tree.\+cpp}!string\+\_\+pos@{string\+\_\+pos}}
+\index{string\+\_\+pos@{string\+\_\+pos}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{string\+\_\+pos}{string\_pos}}
+{\footnotesize\ttfamily int string\+\_\+pos = 0}
+
+
+
+Definition at line 52 of file tree.\+cpp.
+
+\mbox{\Hypertarget{tree_8cpp_ac805b9c62e0f035f62f95b784b8afd25}\label{tree_8cpp_ac805b9c62e0f035f62f95b784b8afd25}} 
+\index{tree.\+cpp@{tree.\+cpp}!T\+O\+P\+\_\+\+M\+A\+R\+G\+IN@{T\+O\+P\+\_\+\+M\+A\+R\+G\+IN}}
+\index{T\+O\+P\+\_\+\+M\+A\+R\+G\+IN@{T\+O\+P\+\_\+\+M\+A\+R\+G\+IN}!tree.\+cpp@{tree.\+cpp}}
+\subsubsection{\texorpdfstring{T\+O\+P\+\_\+\+M\+A\+R\+G\+IN}{TOP\_MARGIN}}
+{\footnotesize\ttfamily const int T\+O\+P\+\_\+\+M\+A\+R\+G\+IN = 50}
+
+
+
+Top margin to be left on the screen before drawing the root of the \mbox{\hyperlink{class_tree}{Tree}}. 
+
+
+
+Definition at line 20 of file tree.\+cpp.
+

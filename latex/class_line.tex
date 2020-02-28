@@ -1,0 +1,107 @@
+\hypertarget{class_line}{}\section{Line Class Reference}
+\label{class_line}\index{Line@{Line}}
+
+
+{\ttfamily \#include $<$line.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_line_abba386ec98cac3158d04915a62185b19}{draw\+Line}} (int, int, int, int)
+\begin{DoxyCompactList}\small\item\em Draws a line between the given points by plotting each pixel on the line based on Bresenham\textquotesingle{}s \mbox{\hyperlink{class_line}{Line}} Drawing Algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_line_a4e7daa2b6095dc0a1afe6bf4a1e55033}{draw\+Line}} (int, int, int, int, int)
+\begin{DoxyCompactList}\small\item\em Draws a line between the given points with padding by plotting each pixel on the line based on Bresenham\textquotesingle{}s \mbox{\hyperlink{class_line}{Line}} Drawing Algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_line_a4bbe9757d2b364c146dca483bd52023b}{init\+Line}} (int $\ast$, char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em This function is used to take coordinates as input from the user, and display a line between those coordinates on a window using Open\+GL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file line.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_line_abba386ec98cac3158d04915a62185b19}\label{class_line_abba386ec98cac3158d04915a62185b19}} 
+\index{Line@{Line}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!Line@{Line}}
+\subsubsection{\texorpdfstring{draw\+Line()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Line\+::draw\+Line (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2 }\end{DoxyParamCaption})}
+
+
+
+Draws a line between the given points by plotting each pixel on the line based on Bresenham\textquotesingle{}s \mbox{\hyperlink{class_line}{Line}} Drawing Algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & The X coordinate of 1st point \\
+\hline
+{\em y1} & The Y coordinate of 1st point \\
+\hline
+{\em x2} & The X coordinate of 2nd point \\
+\hline
+{\em y2} & The Y coordinate of 2nd point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file line.\+cpp.
+
+\mbox{\Hypertarget{class_line_a4e7daa2b6095dc0a1afe6bf4a1e55033}\label{class_line_a4e7daa2b6095dc0a1afe6bf4a1e55033}} 
+\index{Line@{Line}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!Line@{Line}}
+\subsubsection{\texorpdfstring{draw\+Line()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Line\+::draw\+Line (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2,  }\item[{int}]{padding }\end{DoxyParamCaption})}
+
+
+
+Draws a line between the given points with padding by plotting each pixel on the line based on Bresenham\textquotesingle{}s \mbox{\hyperlink{class_line}{Line}} Drawing Algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & The X coordinate of 1st point \\
+\hline
+{\em y1} & The Y coordinate of 1st point \\
+\hline
+{\em x2} & The X coordinate of 2nd point \\
+\hline
+{\em y2} & The Y coordinate of 2nd point \\
+\hline
+{\em padding} & The padding to be given from both the points i.\+e. it first clips the line from both ends based on specified value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file line.\+cpp.
+
+\mbox{\Hypertarget{class_line_a4bbe9757d2b364c146dca483bd52023b}\label{class_line_a4bbe9757d2b364c146dca483bd52023b}} 
+\index{Line@{Line}!init\+Line@{init\+Line}}
+\index{init\+Line@{init\+Line}!Line@{Line}}
+\subsubsection{\texorpdfstring{init\+Line()}{initLine()}}
+{\footnotesize\ttfamily void Line\+::init\+Line (\begin{DoxyParamCaption}\item[{int $\ast$}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function is used to take coordinates as input from the user, and display a line between those coordinates on a window using Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Pointer to total number of arguments \\
+\hline
+{\em argv} & The actual arguments to be passed to the function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file line.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{line_8h}{line.\+h}}\item 
+\mbox{\hyperlink{line_8cpp}{line.\+cpp}}\end{DoxyCompactItemize}

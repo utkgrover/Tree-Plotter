@@ -1,0 +1,147 @@
+\hypertarget{class_tree}{}\section{Tree Class Reference}
+\label{class_tree}\index{Tree@{Tree}}
+
+
+{\ttfamily \#include $<$tree.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tree_a659552e2bba706aece274617c1f36f01}{draw\+Tree}} (\mbox{\hyperlink{structnode}{node}} $\ast$, \mbox{\hyperlink{class_circle}{Circle}}, \mbox{\hyperlink{class_line}{Line}})
+\begin{DoxyCompactList}\small\item\em This function draws a binary \mbox{\hyperlink{class_tree}{Tree}} on a window using Open\+GL based on Tidier \mbox{\hyperlink{class_tree}{Tree}} Drawing ensuring that there is no collision between any two nodes of the tree and minimizing the overall width of the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_tree_a10a93c33011969ce54b35524165c3a2a}{init\+Tree}} (int $\ast$, char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em This function is used to take input from the user, generate a tree and display it on a window using Open\+GL. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_tree_ae7b4d81b53bd06b5556d46b64b4558f5}{inorder}} (\mbox{\hyperlink{structnode}{node}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Prints the coordinates of nodes by performing an in-\/order traversal. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_tree_af4cacacfa6f38926ecbf22722cb33cc3}{setup}} (\mbox{\hyperlink{structnode}{node}} $\ast$, int, \mbox{\hyperlink{structextreme}{extreme}} $\ast$, \mbox{\hyperlink{structextreme}{extreme}} $\ast$)
+\begin{DoxyCompactList}\small\item\em A recursive function to determine the offsets for each sub tree of the given root so that they can be drawn without any collision at any level. This uses the Tidier Algorithm to draw binary trees ensuring minimum overall width of the tree. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_tree_a139d5988d1628db018c77c3c1be4d100}{convert}} (\mbox{\hyperlink{structnode}{node}} $\ast$, int)
+\begin{DoxyCompactList}\small\item\em A recursive function to determine the absolute coordinates of each node using the offset calculated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file tree.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tree_a139d5988d1628db018c77c3c1be4d100}\label{class_tree_a139d5988d1628db018c77c3c1be4d100}} 
+\index{Tree@{Tree}!convert@{convert}}
+\index{convert@{convert}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily void Tree\+::convert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{T,  }\item[{int}]{X\+P\+OS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A recursive function to determine the absolute coordinates of each node using the offset calculated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Pointer to the root of the subtree whose absolute coordinate is to be determined \\
+\hline
+{\em X\+P\+OS} & The X-\/\+Coordinate that has to be assigned to this node passed as 1st parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file tree.\+cpp.
+
+\mbox{\Hypertarget{class_tree_a659552e2bba706aece274617c1f36f01}\label{class_tree_a659552e2bba706aece274617c1f36f01}} 
+\index{Tree@{Tree}!draw\+Tree@{draw\+Tree}}
+\index{draw\+Tree@{draw\+Tree}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{draw\+Tree()}{drawTree()}}
+{\footnotesize\ttfamily void Tree\+::draw\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{class_circle}{Circle}}}]{circle,  }\item[{\mbox{\hyperlink{class_line}{Line}}}]{line }\end{DoxyParamCaption})}
+
+
+
+This function draws a binary \mbox{\hyperlink{class_tree}{Tree}} on a window using Open\+GL based on Tidier \mbox{\hyperlink{class_tree}{Tree}} Drawing ensuring that there is no collision between any two nodes of the tree and minimizing the overall width of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & pointer to the root of the tree which has to be plotted \\
+\hline
+{\em circle} & \mbox{\hyperlink{class_circle}{Circle}} object to be used for drawing circles \\
+\hline
+{\em line} & \mbox{\hyperlink{class_line}{Line}} object to be used for drawing lines \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 91 of file tree.\+cpp.
+
+\mbox{\Hypertarget{class_tree_a10a93c33011969ce54b35524165c3a2a}\label{class_tree_a10a93c33011969ce54b35524165c3a2a}} 
+\index{Tree@{Tree}!init\+Tree@{init\+Tree}}
+\index{init\+Tree@{init\+Tree}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{init\+Tree()}{initTree()}}
+{\footnotesize\ttfamily void Tree\+::init\+Tree (\begin{DoxyParamCaption}\item[{int $\ast$}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function is used to take input from the user, generate a tree and display it on a window using Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The total number of arguments \\
+\hline
+{\em argv} & The actual arguments to be passed to the function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file tree.\+cpp.
+
+\mbox{\Hypertarget{class_tree_ae7b4d81b53bd06b5556d46b64b4558f5}\label{class_tree_ae7b4d81b53bd06b5556d46b64b4558f5}} 
+\index{Tree@{Tree}!inorder@{inorder}}
+\index{inorder@{inorder}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily void Tree\+::inorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the coordinates of nodes by performing an in-\/order traversal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Pointer to the root of the tree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file tree.\+cpp.
+
+\mbox{\Hypertarget{class_tree_af4cacacfa6f38926ecbf22722cb33cc3}\label{class_tree_af4cacacfa6f38926ecbf22722cb33cc3}} 
+\index{Tree@{Tree}!setup@{setup}}
+\index{setup@{setup}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Tree\+::setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{T,  }\item[{int}]{L\+E\+V\+EL,  }\item[{\mbox{\hyperlink{structextreme}{extreme}} $\ast$}]{R\+M\+O\+ST,  }\item[{\mbox{\hyperlink{structextreme}{extreme}} $\ast$}]{L\+M\+O\+ST }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A recursive function to determine the offsets for each sub tree of the given root so that they can be drawn without any collision at any level. This uses the Tidier Algorithm to draw binary trees ensuring minimum overall width of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Pointer to the root node of the tree whose child offsets are to be determined \\
+\hline
+{\em L\+E\+V\+EL} & Current level of this node \\
+\hline
+{\em R\+M\+O\+ST} & Pointer to right most nodes used to determine offset efficiently \\
+\hline
+{\em L\+M\+O\+ST} & Pointer to right most nodes used to determine offset efficiently \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file tree.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tree_8h}{tree.\+h}}\item 
+\mbox{\hyperlink{tree_8cpp}{tree.\+cpp}}\end{DoxyCompactItemize}

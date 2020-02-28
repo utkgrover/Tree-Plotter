@@ -4,8 +4,6 @@
 #include"helper.h"
 #include"line.h"
 
-const int WINDOW_WIDTH=500;
-const int WINDOW_HEIGHT=500;
 static int X1, Y1, X2, Y2;
 
 /**
