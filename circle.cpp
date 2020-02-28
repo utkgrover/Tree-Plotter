@@ -44,7 +44,8 @@ void Circle::drawCircle(int centerX, int centerY, int radius){
 
 void display(void){
     Helper::clearScreen();
-    Circle::drawCircle(center_x, center_y, cradius);
+    Circle circle;
+    circle.drawCircle(center_x, center_y, cradius);
     glFlush();
 }
 

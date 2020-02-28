@@ -141,7 +141,8 @@ void Line::drawLine(int x1, int y1, int x2, int y2, int padding){
 
 void render(void){
     Helper::clearScreen();
-    Line::drawLine(X1, Y1, X2, Y2);
+    Line line;
+    line.drawLine(X1, Y1, X2, Y2);
     glFlush();
 }
 
@@ -174,16 +175,17 @@ bool Line::insideScreen(int x,int y){
  * @param argc Pointer to total number of arguments
  * @param argv The actual arguments to be passed to the function
  */
-void Line::initLine(int *argc, char **argv){  
+void Line::initLine(int *argc, char **argv){
+    Line line;
     do{
         std::cout<<"enter x and y coordinates of the first point"<<std::endl;
         std::cin>>X1>>Y1;
-    } while(!insideScreen(X1,Y1));
+    } while(!line.insideScreen(X1,Y1));
 
     do{
         std::cout<<"enter x and y coordinates of the second point"<<std::endl;
         std::cin>>X2>>Y2;
-    } while(!insideScreen(X2,Y2));
+    } while(!line.insideScreen(X2,Y2));
     
     Helper::createWindow(argc, argv);
     glutDisplayFunc(render);

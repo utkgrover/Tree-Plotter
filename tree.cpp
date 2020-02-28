@@ -90,21 +90,25 @@ node *getSampleTree(){
  * overall width of the tree
  * 
  * @param root pointer to the root of the tree which has to be plotted
+ * @param circle Circle object to be used for drawing circles
+ * @param line Line object to be used for drawing lines
  */
-void drawTree(node *root){
-	Circle::drawCircle(root->XCOORD, root->YCOORD, RADIUS);
+void drawTree(node *root, Circle circle, Line line){
+	circle.drawCircle(root->XCOORD, root->YCOORD, RADIUS);
 	if (root->LLINK != NULL){
-		Line::drawLine(root->XCOORD, root->YCOORD, root->LLINK->XCOORD, root->LLINK->YCOORD, RADIUS + 2);
-		drawTree(root->LLINK);
+		line.drawLine(root->XCOORD, root->YCOORD, root->LLINK->XCOORD, root->LLINK->YCOORD, RADIUS + 2);
+		drawTree(root->LLINK, circle, line);
 	}
 	if (root->RLINK != NULL){
-		Line::drawLine(root->XCOORD, root->YCOORD, root->RLINK->XCOORD, root->RLINK->YCOORD, RADIUS + 2);
-		drawTree(root->RLINK);
+		line.drawLine(root->XCOORD, root->YCOORD, root->RLINK->XCOORD, root->RLINK->YCOORD, RADIUS + 2);
+		drawTree(root->RLINK, circle, line);
 	}
 }
 
 void draw(){
-	drawTree(treeRoot);
+	Circle circle;
+	Line line;
+	drawTree(treeRoot, circle, line);
 	glFlush();
 }
 
