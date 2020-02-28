@@ -114,7 +114,7 @@ void draw(){
  * @param argc The total number of arguments
  * @param argv The actual arguments to be passed to the function
  */
-void Tree::initTree(int argc, char **argv){
+void Tree::initTree(int *argc, char **argv){
 	extreme *a = (extreme *)malloc(sizeof(extreme));
 	extreme *b = (extreme *)malloc(sizeof(extreme));
 
@@ -123,7 +123,7 @@ void Tree::initTree(int argc, char **argv){
 	convert(treeRoot, WINDOW_WIDTH / 2);
 	printf("\nInorder traversal of Tree :\n");
 	inorder(treeRoot);
-	Helper::createWindow(&argc, argv);
+	Helper::createWindow(argc, argv);
 	Helper::clearScreen();
 	glutDisplayFunc(draw);
 	// glutIdleFunc(idle);
